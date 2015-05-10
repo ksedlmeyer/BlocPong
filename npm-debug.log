@@ -1,0 +1,84 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'gru-cli' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose cache add [ 'gru-cli', null ]
+5 verbose cache add name=undefined spec="gru-cli" args=["gru-cli",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'gru-cli',
+6 verbose parsed url   path: 'gru-cli',
+6 verbose parsed url   href: 'gru-cli' }
+7 silly lockFile 3f65d4c1-gru-cli gru-cli
+8 verbose lock gru-cli C:\Users\Katie\AppData\Roaming\npm-cache\3f65d4c1-gru-cli.lock
+9 silly lockFile 3f65d4c1-gru-cli gru-cli
+10 silly lockFile 3f65d4c1-gru-cli gru-cli
+11 verbose addNamed [ 'gru-cli', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 1499d387-gru-cli gru-cli@
+14 verbose lock gru-cli@ C:\Users\Katie\AppData\Roaming\npm-cache\1499d387-gru-cli.lock
+15 silly addNameRange { name: 'gru-cli', range: '*', hasData: false }
+16 verbose request where is /gru-cli
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id cef1d1fe055448c6
+19 verbose url raw /gru-cli
+20 verbose url resolving [ 'https://registry.npmjs.org/', './gru-cli' ]
+21 verbose url resolved https://registry.npmjs.org/gru-cli
+22 verbose request where is https://registry.npmjs.org/gru-cli
+23 info trying registry request attempt 1 at 19:51:57
+24 http GET https://registry.npmjs.org/gru-cli
+25 http 404 https://registry.npmjs.org/gru-cli
+26 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 verbose headers   'content-type': 'application/json',
+26 verbose headers   'cache-control': 'max-age=0',
+26 verbose headers   'content-length': '51',
+26 verbose headers   'accept-ranges': 'bytes',
+26 verbose headers   date: 'Sun, 10 May 2015 23:52:03 GMT',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   age: '0',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-served-by': 'cache-atl6225-ATL',
+26 verbose headers   'x-cache': 'MISS',
+26 verbose headers   'x-cache-hits': '0',
+26 verbose headers   'x-timer': 'S1431301923.538256,VS0,VE82' }
+27 silly registry.get cb [ 404,
+27 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '51',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Sun, 10 May 2015 23:52:03 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-atl6225-ATL',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1431301923.538256,VS0,VE82' } ]
+28 silly lockFile 1499d387-gru-cli gru-cli@
+29 silly lockFile 1499d387-gru-cli gru-cli@
+30 error 404 404 Not Found: gru-cli
+30 error 404
+30 error 404 'gru-cli' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Windows_NT 6.1.7601
+32 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "gru-cli"
+33 error cwd c:\Users\Katie\projects\Pong
+34 error node -v v0.10.35
+35 error npm -v 1.4.28
+36 error code E404
+37 verbose exit [ 1, true ]
