@@ -43,7 +43,7 @@ function Paddle(x, y, width, height) {
  this.height = height;
  this.x_speed = 0;
  this.y_speed = 0;
-}
+};
 
 Paddle.prototype.render = function() {
   context.fillStyle = "#FFFFFF";
@@ -62,11 +62,11 @@ Paddle.prototype.move = function(x, y) {
     this.x = 400 - this.width;
     this.x_speed = 0;
   }
-}
+};
 
 function Computer() {
   this.paddle = new Paddle(175, 10, 50, 10);
-}
+};
 
 Computer.prototype.render = function() {
   this.paddle.render();
@@ -74,7 +74,7 @@ Computer.prototype.render = function() {
 
 function Player() {
    this.paddle = new Paddle(175, 580, 50, 10);
-}
+};
 
 Player.prototype.render = function() {
   this.paddle.render();
@@ -99,7 +99,7 @@ function Ball(x, y) {
   this.x_speed = 0;
   this.y_speed = 3;
   this.radius = 5;
-}
+};
 
 Ball.prototype.render = function() {
   context.beginPath();
