@@ -5,6 +5,8 @@ var animate = window.requestAnimationFrame ||
   window.msRequestAnimationFrame ||
   function(callback) { window.setTimeout(callback, 1000/60) };
 
+// Declare variables
+
 var canvas = document.createElement('canvas');
 var width = 400;
 var height = 600;
@@ -38,6 +40,8 @@ var step = function() {
    animate(step);
  };
 
+ // Build Paddles
+
 function Paddle(x, y, width, height) {
  this.x = x;
  this.y = y;
@@ -66,6 +70,8 @@ Paddle.prototype.move = function(x, y) {
   }
 };
 
+// Computer Prototypes
+
 function Computer() {
   this.paddle = new Paddle(175, 10, 50, 10);
 };
@@ -90,6 +96,8 @@ Computer.prototype.update = function(ball) {
   }
 };
 
+// Player Prototypes
+
 function Player() {
    this.paddle = new Paddle(175, 580, 50, 10);
 };
@@ -110,6 +118,8 @@ Player.prototype.update = function() {
     }
   }
 };
+
+// Ball Prototypes
 
 function Ball(x, y) {
   this.x = x;
@@ -133,6 +143,8 @@ Ball.prototype.update = function(paddle1, paddle2) {
   var top_y = this.y - 5;
   var bottom_x = this.x + 5;
   var bottom_y = this.y + 5;
+  var playerScore = 0;
+  var computerScore = 0;
 
   if(this.x - 5 < 0) { // hitting the left wall
     this.x = 5;
@@ -142,11 +154,18 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.x_speed = -this.x_speed;
   }
 
-  if(this.y < 0 || this.y > 600) { // a point was scored
+  if(this.y < 0) { // a point was scored by player
     this.x_speed = 0;
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
+    playerScore += 1;
+  } else if(this.y > 600) { // a point was scored by computer
+    this.x_speed = 0;
+    this.y_speed = 3;
+    this.x = 200;
+    this.y = 300;
+    computerScore += 1;
   }
 
   if(top_y > 300) {
@@ -165,6 +184,9 @@ Ball.prototype.update = function(paddle1, paddle2) {
     }
   }
 };
+
+var playerScoreElement = document.getElementById('playerScore');
+var computerScoreElement = document.getElementById('computerScore');
 
 document.body.appendChild(canvas);
 animate(step);
