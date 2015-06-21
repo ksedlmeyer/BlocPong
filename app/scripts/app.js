@@ -160,12 +160,14 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.x = 200;
     this.y = 300;
     playerScore += 1;
+    playerScore.innerHTML = playerScore;
   } else if(this.y > 600) { // a point was scored by computer
     this.x_speed = 0;
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
     computerScore += 1;
+    computerScore.innerHTML = computerScore;
   }
 
   if(top_y > 300) {
@@ -187,6 +189,8 @@ Ball.prototype.update = function(paddle1, paddle2) {
 
 var playerScoreElement = document.getElementById('playerScore');
 var computerScoreElement = document.getElementById('computerScore');
+
+
 
 document.body.appendChild(canvas);
 animate(step);
