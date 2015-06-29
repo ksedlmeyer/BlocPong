@@ -7,16 +7,21 @@ var animate = window.requestAnimationFrame ||
 
 // Declare variables
 
-var canvas = document.createElement('canvas');
-var width = 400;
-var height = 600;
-canvas.width = width;
-canvas.height = height;
-var context = canvas.getContext('2d');
+start = function() {
+  var canvas = document.createElement('canvas');
+  var width = 400;
+  var height = 600;
+  canvas.width = width;
+  canvas.height = height;
+  var context = canvas.getContext('2d');
 
-var player = new Player();
-var computer = new Computer();
-var ball = new Ball(200, 300);
+  var player = new Player();
+  var computer = new Computer();
+  var ball = new Ball(200, 300);
+
+  document.body.appendChild(canvas);
+  animate(step);
+}
 
 var keysDown = {};
 
@@ -127,6 +132,9 @@ function Ball(x, y) {
   this.x_speed = 0;
   this.y_speed = 3;
   this.radius = 5;
+  this.playerScoreElement = document.getElementById('playerScore');
+  this.computerScoreElement = document.getElementById('computerScore');
+
 };
 
 Ball.prototype.render = function() {
@@ -160,14 +168,20 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.x = 200;
     this.y = 300;
     playerScore += 1;
-    playerScore.innerHTML = playerScore;
+    this.playerScoreElement.innerHTML = playerScore;
+    console.log(playerScoreElement);
   } else if(this.y > 600) { // a point was scored by computer
     this.x_speed = 0;
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
     computerScore += 1;
-    computerScore.innerHTML = computerScore;
+    this.computerScoreElement.innerHTML = computerScore;
+    console.log(computerScoreElement);
+  }
+
+  if(playerScore == 11) {
+    
   }
 
   if(top_y > 300) {
@@ -186,14 +200,6 @@ Ball.prototype.update = function(paddle1, paddle2) {
     }
   }
 };
-
-var playerScoreElement = document.getElementById('playerScore');
-var computerScoreElement = document.getElementById('computerScore');
-
-
-
-document.body.appendChild(canvas);
-animate(step);
 
 window.addEventListener("keydown", function(event) {
   keysDown[event.keyCode] = true;
