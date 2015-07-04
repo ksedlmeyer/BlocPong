@@ -7,7 +7,6 @@ var animate = window.requestAnimationFrame ||
 
 // Declare variables
 
-start = function() {
   var canvas = document.createElement('canvas');
   var width = 400;
   var height = 600;
@@ -19,9 +18,6 @@ start = function() {
   var computer = new Computer();
   var ball = new Ball(200, 300);
 
-  document.body.appendChild(canvas);
-  animate(step);
-}
 
 var keysDown = {};
 
@@ -167,17 +163,25 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    playerScore += 1;
+    if (playerScore == 11) {
+
+    } else {
+      playerScore += 1;
+    }
     this.playerScoreElement.innerHTML = playerScore;
-    console.log(playerScoreElement);
+    console.log(this.playerScoreElement);
   } else if(this.y > 600) { // a point was scored by computer
     this.x_speed = 0;
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    computerScore += 1;
+    if (computerScore == 11) {
+
+    } else {
+      computerScore += 1;
+    }
     this.computerScoreElement.innerHTML = computerScore;
-    console.log(computerScoreElement);
+    console.log(this.computerScoreElement);
   }
 
   if(playerScore == 11) {
@@ -200,6 +204,9 @@ Ball.prototype.update = function(paddle1, paddle2) {
     }
   }
 };
+
+document.body.appendChild(canvas);
+animate(step);
 
 window.addEventListener("keydown", function(event) {
   keysDown[event.keyCode] = true;
