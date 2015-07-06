@@ -128,6 +128,8 @@ function Ball(x, y) {
   this.x_speed = 0;
   this.y_speed = 3;
   this.radius = 5;
+  this.playerScore = 0;
+  this.computerScore = 0;
   this.playerScoreElement = document.getElementById('playerScore');
   this.computerScoreElement = document.getElementById('computerScore');
 
@@ -147,8 +149,6 @@ Ball.prototype.update = function(paddle1, paddle2) {
   var top_y = this.y - 5;
   var bottom_x = this.x + 5;
   var bottom_y = this.y + 5;
-  var playerScore = 0;
-  var computerScore = 0;
 
   if(this.x - 5 < 0) { // hitting the left wall
     this.x = 5;
@@ -163,29 +163,25 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    if (playerScore == 11) {
-
+    if (this.playerScore == 11) {
+      
     } else {
-      playerScore += 1;
+      this.playerScore += 1;
     }
-    this.playerScoreElement.innerHTML = playerScore;
+    this.playerScoreElement.innerHTML = this.playerScore;
     console.log(this.playerScoreElement);
   } else if(this.y > 600) { // a point was scored by computer
     this.x_speed = 0;
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    if (computerScore == 11) {
+    if (this.computerScore == 11) {
 
     } else {
-      computerScore += 1;
+      this.computerScore += 1;
     }
-    this.computerScoreElement.innerHTML = computerScore;
+    this.computerScoreElement.innerHTML = this.computerScore;
     console.log(this.computerScoreElement);
-  }
-
-  if(playerScore == 11) {
-    
   }
 
   if(top_y > 300) {
