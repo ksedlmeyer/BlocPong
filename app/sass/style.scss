@@ -1,19 +1,13 @@
 #playerScore {
   color: blue;
-  border: 1px white;
+  border: 1px solid white;
   height: 500px;
+  text-align: right;
 }
 
 #computerScore {
   color: red;
-  border: 1px white;
+  border: 1px solid white;
   height: 500px;
-}
-
-#win {
-  display: none;
-}
-
-#lose {
-  display: none;
+  text-align: left;
 }
