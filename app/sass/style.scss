@@ -1,13 +1,31 @@
 #playerScore {
   color: blue;
   border: 1px solid white;
-  height: 500px;
+  font-size: 500px;
   text-align: right;
 }
 
 #computerScore {
   color: red;
   border: 1px solid white;
-  height: 500px;
+  font-size: 500px;
   text-align: left;
+}
+
+#winMessage {
+  color: black;
+  font-size: 500px;
+  text-align: center;
+}
+
+#loseMessage {
+  color: black;
+  font-size: 500px;
+  text-align: center;
+}
+
+#refreshMessage {
+  color: black;
+  font-size: 500px;
+  text-align: center;
 }

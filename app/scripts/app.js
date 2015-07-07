@@ -132,6 +132,12 @@ function Ball(x, y) {
   this.computerScore = 0;
   this.playerScoreElement = document.getElementById('playerScore');
   this.computerScoreElement = document.getElementById('computerScore');
+  this.winMessage = 'You won!';
+  this.loseMessage = 'You lost!';
+  this.refreshMessage = 'Refresh the page to play again';
+  this.winMessageElement = document.getElementById('winMessage');
+  this.loseMessageElement = document.getElementById('loseMessage');
+  this.refreshMessageElement = document.getElementById('refreshMessage');
 
 };
 
@@ -163,8 +169,9 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    if (this.playerScore == 11) {
-      
+    if (this.playerScore === 11) {
+      this.winMessageElement.innerHTML = this.winMessage;
+      this.refreshMessageElement.innerHTML = this.refreshMessage;
     } else {
       this.playerScore += 1;
     }
@@ -175,8 +182,9 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    if (this.computerScore == 11) {
-
+    if (this.computerScore === 11) {
+      this.loseMessageElement.innerHTML = this.loseMessage;
+      this.refreshMessageElement.innerHTML = this.refreshMessage;
     } else {
       this.computerScore += 1;
     }
