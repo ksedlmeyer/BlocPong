@@ -130,14 +130,11 @@ function Ball(x, y) {
   this.radius = 5;
   this.playerScore = 0;
   this.computerScore = 0;
+  this.winMessage = "You won! Refresh the page to play again.";
+  this.loseMessage = "You lost! Refresh the page to play again.";
+  this.messageElement = document.getElementById('message');
   this.playerScoreElement = document.getElementById('playerScore');
   this.computerScoreElement = document.getElementById('computerScore');
-  this.winMessage = 'You won!';
-  this.loseMessage = 'You lost!';
-  this.refreshMessage = 'Refresh the page to play again';
-  this.winMessageElement = document.getElementById('winMessage');
-  this.loseMessageElement = document.getElementById('loseMessage');
-  this.refreshMessageElement = document.getElementById('refreshMessage');
 
 };
 
@@ -169,9 +166,8 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    if (this.playerScore === 11) {
-      this.winMessageElement.innerHTML = this.winMessage;
-      this.refreshMessageElement.innerHTML = this.refreshMessage;
+    if (this.playerScore > 10) {
+      this.messageElement.innerHTML = this.winMessage;
     } else {
       this.playerScore += 1;
     }
@@ -182,9 +178,8 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.y_speed = 3;
     this.x = 200;
     this.y = 300;
-    if (this.computerScore === 11) {
-      this.loseMessageElement.innerHTML = this.loseMessage;
-      this.refreshMessageElement.innerHTML = this.refreshMessage;
+    if (this.computerScore > 10) {
+      this.messageElement.innerHTML = this.loseMessage;
     } else {
       this.computerScore += 1;
     }
